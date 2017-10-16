@@ -1,11 +1,12 @@
 require_relative 'environment'
-
+require 'pry'
 class SQLRunner
   def initialize(db)
     @db = db
   end
 
   def execute_schema_sql
+    # binding.pry
     sql = File.read("lib/schema.sql")
     @db.execute_batch(sql)
   end
