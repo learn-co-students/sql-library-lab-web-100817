@@ -18,7 +18,7 @@ INSERT INTO books (id, title, year, series_id) VALUES
 (11, 'cj craig - talk like this', 1991, 4),
 (12, 'josh the boss', 1992, 4);
 
-INSERT INTO characters (id, name, motto, species, author_it, series_id) VALUES
+INSERT INTO characters (id, name, motto, species, author_id, series_id) VALUES
 (5, 'cj craig', 'shut up and listen', 'secret weapon', 3, 3),
 (6, 'toby zeigler', 'leave me alone', 'eyore', 3, 3),
 (7, 'sam seaborn', 'wait!', 'nice guy', 3, 3),
@@ -27,3 +27,6 @@ INSERT INTO characters (id, name, motto, species, author_it, series_id) VALUES
 (10, 'munch', 'they are out there', 'alien', 4, 4),
 (11, 'olivia benson', 'i never give up', 'boss', 4, 4),
 (12, 'stabler', 'gotta catch em all', 'white guy', 4, 4);
+
+INSERT INTO character_books (book_id, character_id) VALUES
+(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9), (10, 10), (11, 11), (12, 12), (12, 11), (11, 10), (10, 9), (9, 8);
