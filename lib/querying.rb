@@ -12,15 +12,15 @@ def select_value_and_count_of_most_prolific_species #working
 end
 
 def select_name_and_series_subgenres_of_authors
-  "SELECT authors.name, subgenres.name FROM authors JOIN subgenres WHERE series.subgenre_id = subgenres.id;"
+  "SELECT authors.name, subgenres.name FROM authors JOIN series ON series.author_id = authors.id JOIN subgenres ON subgenres.id = series.subgenre_id"
 end
 
 def select_series_title_with_most_human_characters #working
   "SELECT title FROM series JOIN characters ON series.id = characters.series_id GROUP BY species ORDER BY title LIMIT 1"
 end
 
-def select_character_names_and_number_of_books_they_are_in
-"SELECT characters.name, character_books.book_id FROM characters
+def select_character_names_and_number_of_books_they_are_in #working
+"SELECT characters.name, COUNT(character_books.book_id) FROM characters
 JOIN character_books ON characters.id = character_books.character_id
-GROUP BY characters.id ORDER BY characters.name"
+GROUP BY characters.name ORDER BY COUNT(character_books.book_id) DESC"
 end
